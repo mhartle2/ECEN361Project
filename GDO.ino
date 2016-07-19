@@ -1,8 +1,7 @@
 #include <ESP8266WiFi.h>
 #include <Servo.h>
  
-//const char* ssid = "<3ley";
-//const char* password = "LoveatHome4";
+// Variables to connect to WiFi
 const char* ssid = "Funkybunch";
 const char* password = "marc1234";
 
@@ -12,8 +11,9 @@ WiFiServer server(80);
 
 Servo myServo;
  
-void setup() {
-  myServo.attach(5);
+void setup() 
+  
+  myServo.attach(5);   // attach servo to pin 5
   Serial.begin(115200);
   delay(10);
  
@@ -83,11 +83,7 @@ void loop() {
     delay(500);
     myServo.write(90);
   }
- 
-// Set ledPin according to the request
-//digitalWrite(ledPin, value);
-   
- 
+  
   // Return the response
   client.println("HTTP/1.1 200 OK");
   client.println("Content-Type: text/html");
